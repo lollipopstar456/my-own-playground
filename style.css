@@ -151,6 +151,32 @@ footer {
   flex: 1 1 200px;
 }
 
+/* Contact row: make the label inline with contact items */
+.footer-info .contact-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-info .contact-items {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-info .contact-item {
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.footer-info .contact-item a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 .footer-info h4, .footer-links h4 {
   margin-bottom: 10px;
   color: #ffffff;
@@ -209,6 +235,16 @@ footer p {
     flex-direction: column;
     text-align: center;
     align-items: center;
+  }
+
+  /* Stack the contact row on small screens for readability */
+  .footer-info .contact-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-info .contact-items {
+    justify-content: center;
   }
 }
 
