@@ -105,7 +105,7 @@ nav a {
 
 /* ---------- CTA ---------- */
 .cta-btn {
-  background: #6366F1;
+  background: #f200ff;
   padding: 14px 28px;
   color: #fff;
   border-radius: 8px;
@@ -140,7 +140,7 @@ nav a {
   padding: 14px;
   border: 0;
   border-radius: 8px;
-  background: #F63CA9;
+  background: #ff0095;
   color: #fff;
   font-size: 16px;
   font-weight: 600;
