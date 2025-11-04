@@ -52,10 +52,10 @@ header nav a:hover {
   display: inline-block;
 }
 
-.cta-btn:hover, .signup-btn:hover {
-  background-color: #e02ea0; /* Darker pink on hover */
+.cta-btn:hover, .signup-btn:hover,
+.cta-btn:active, .signup-btn:active { /* Hover/active for mobile */
+  background-color: #e02ea0; 
   transform: translateY(-2px);
-  text-decoration: none;
 }
 
 /* Hero Section */
@@ -88,17 +88,18 @@ header nav a:hover {
   transition: transform 0.3s, box-shadow 0.3s;
   flex: 1 1 250px;
   max-width: 350px;
-  border: 2px solid #e0e0e0; /* Border added */
+  border: 2px solid #e0e0e0;
 }
 
-.feature-card:hover {
+.feature-card:hover,
+.feature-card:active { /* Hover/active for mobile */
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 /* Feature Icons */
 .feature-card .icon img {
-  width: 60px;  /* Desktop size */
+  width: 60px;  
   height: 60px;
   object-fit: contain;
   margin-bottom: 15px;
@@ -118,22 +119,22 @@ header nav a:hover {
   padding: 10px 15px;
   width: 250px;
   border-radius: 5px;
-  border: 2px solid #e0e0e0; /* Border added */
+  border: 2px solid #e0e0e0;
   outline: none;
   transition: border-color 0.3s;
 }
 
 .signup-section input:focus {
-  border-color: #ff3cac; /* Pink border on focus */
+  border-color: #ff3cac;
 }
 
 .signup-section button.signup-btn {
-  border: 2px solid #ff3cac; /* Optional matching border */
+  border: 2px solid #ff3cac;
 }
 
 /* Footer */
 footer {
-  background-color: #87CEFA; /* Bright blue */
+  background-color: #87CEFA; 
   color: #ffffff;
   padding: 40px 20px 20px 20px;
 }
@@ -147,16 +148,30 @@ footer {
   gap: 20px;
 }
 
-.footer-info, .footer-links {
-  flex: 1 1 200px;
-}
-
-/* Contact row: make the label inline with contact items */
+/* Contact row stacked and left-aligned on larger screens */
 .footer-info .contact-row {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: column; /* Stack the heading and the contact items so they align vertically */
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.footer-info,
+.footer-links {
+  flex: 1 1 200px; /* ensure both columns take the same base width */
+  padding: 0; /* remove any inner padding so left edges line up */
+}
+
+.footer-info {
+  text-align: left; /* Heading & text aligned together on desktop */
+}
+
+/* make both columns behave as columns so their children align at the same left edge */
+.footer-info,
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .footer-info .contact-items {
@@ -166,15 +181,14 @@ footer {
   flex-wrap: wrap;
 }
 
-.footer-info .contact-item {
-  color: #ffffff;
-  font-size: 0.95rem;
+/* reset heading and item margins so left edges align exactly */
+.footer-info h4,
+.footer-links h4 {
+  margin: 0 0 10px 0;
 }
 
-.footer-info .contact-item a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
+.footer-info .contact-item {
+  margin: 0;
 }
 
 .footer-info h4, .footer-links h4 {
@@ -190,8 +204,9 @@ footer {
   transition: color 0.3s, padding-left 0.2s;
 }
 
-.footer-links a:hover {
-  color: #ff3cac; /* Pink hover */
+.footer-links a:hover,
+.footer-links a:active {
+  color: #ff3cac;
   padding-left: 5px;
 }
 
@@ -219,7 +234,7 @@ footer p {
   }
 
   .feature-card .icon img {
-    width: 50px;  /* Smaller icons on mobile */
+    width: 50px;  
     height: 50px;
   }
 
@@ -237,15 +252,31 @@ footer p {
     align-items: center;
   }
 
-  /* Stack the contact row on small screens for readability */
+  /* On small screens keep contact heading centered and items stacked/centered */
+  .footer-info {
+    text-align: center;
+  }
+
   .footer-info .contact-row {
-    flex-direction: column;
     align-items: center;
   }
 
   .footer-info .contact-items {
     justify-content: center;
   }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  /* also center the column children on mobile */
+  .footer-info,
+  .footer-links {
+    align-items: center;
+  }
 }
+
 
 
