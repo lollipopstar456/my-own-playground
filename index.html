@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
@@ -42,8 +41,8 @@
     }
 
     /* Buttons */
-    .cta-btn {
-      background-color: #6a0dad; /* Original purple */
+    .cta-btn, .signup-btn {
+      background-color: #ff3cac; /* Same pink for both */
       color: white;
       padding: 12px 25px;
       border: none;
@@ -53,24 +52,8 @@
       transition: background-color 0.3s, transform 0.2s;
     }
 
-    .cta-btn:hover {
-      background-color: #5a009d; /* Slightly darker purple */
-      transform: translateY(-2px);
-    }
-
-    .signup-btn {
-      background-color: #8a2be2; /* Original light purple */
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-
-    .signup-btn:hover {
-      background-color: #7a1ed0; /* Slightly darker on hover */
+    .cta-btn:hover, .signup-btn:hover {
+      background-color: #e02ea0; /* Slightly darker pink on hover */
       transform: translateY(-2px);
     }
 
@@ -83,7 +66,7 @@
     }
 
     .feature-card {
-      background: #f9f9f9;
+      background: #ffffff; /* White feature cards */
       padding: 20px;
       border-radius: 10px;
       width: 300px;
@@ -109,9 +92,10 @@
       margin-right: 10px;
     }
 
+    /* Footer styles */
     footer {
-      background-color: #1e1e1e;
-      color: #fff;
+      background-color: #87CEFA; /* Brighter blue */
+      color: #ffffff; /* White text */
       padding: 40px 20px 20px 20px;
     }
 
@@ -129,11 +113,11 @@
 
     .footer-info h4, .footer-links h4 {
       margin-bottom: 10px;
-      color: #fff;
+      color: #ffffff; /* White headings */
     }
 
     .footer-links a {
-      color: #fffefe;
+      color: #ffffff; /* White links */
       text-decoration: none;
       display: block;
       margin-bottom: 5px;
@@ -141,8 +125,14 @@
     }
 
     .footer-links a:hover {
-      color: #e32fcb; /* Hover matches main purple */
+      color: #ff3cac; /* Hover pink */
       padding-left: 5px;
+    }
+
+    footer p {
+      text-align: center;
+      margin-top: 20px;
+      color: #ffffff; /* White footer text */
     }
   </style>
 </head>
@@ -216,7 +206,7 @@
     </div>
   </div>
 
-  <p style="text-align:center; margin-top: 20px;">© 2025 TrendMiner. All rights reserved.</p>
+  <p>© 2025 TrendMiner. All rights reserved.</p>
 </footer>
 
 <script src="script.js"></script>
