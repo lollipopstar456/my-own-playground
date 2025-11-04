@@ -1,30 +1,215 @@
-/* style.css - TrendMiner Landing Page */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: "Poppins", sans-serif; line-height: 1.6; color: #111; }
-header { display: flex; justify-content: space-between; align-items: center; padding: 22px 70px; }
-nav a { text-decoration: none; color: #111; margin-left: 30px; font-weight: 500; }
-.logo { font-size: 20px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
-.logo span { color: #6366F1; font-weight: 700; }
-.hero { text-align: center; padding: 60px 90px; }
-.hero h1 { font-size: 32px; font-weight: 700; margin-bottom: 16px; }
-.hero p { font-size: 16px; color: #555; max-width: 650px; margin: 0 auto 40px auto; }
-.hero img { max-width: 700px; width: 100%; margin: 0 auto; }
-.features { display: flex; justify-content: center; gap: 30px; padding: 40px 90px; }
-.feature-card { background: #fff; padding: 24px; border-radius: 12px; width: 300px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
-.feature-card h3 { font-size: 18px; margin-bottom: 10px; }
-.feature-card p { font-size: 14px; color: #666; }
-.cta-btn { background: #6366F1; padding: 14px 28px; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; margin: 30px auto; }
-.signup-section { background: white; max-width: 550px; margin: 50px auto; padding: 28px; border-radius: 14px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); text-align: center; }
-.signup-section input { width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; font-size: 15px; }
-.signup-btn { width: 100%; padding: 14px; border: 0; border-radius: 8px; background: #F63CA9; color: #fff; font-size: 16px; font-weight: 600; cursor: pointer; }
-footer { margin-top: 80px; background: #F1F5FE; padding: 40px 0; text-align: center; color: #555; font-size: 14px; }
-.social { margin-bottom: 12px; }
-.social i { margin: 0 8px; cursor: pointer; }
-/* Responsiveness */
-@media(max-width: 900px) {
-  .features { flex-direction: column; align-items: center; }
-  header { padding: 22px 30px; }
-  nav a { margin-left: 15px; }
+/* Reset & Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #1e90ff;
+}
+
+/* Buttons */
+.cta-btn, .signup-btn {
+  background-color: #ff3cac; /* Pink */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none; /* No underline */
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-block;
+}
+
+.cta-btn:hover, .signup-btn:hover {
+  background-color: #e02ea0; /* Darker pink on hover */
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 50px 20px;
+}
+
+.feature-card {
+  background: #ffffff; /* White cards */
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 1 1 250px;
+  max-width: 350px;
+  border: 2px solid #e0e0e0; /* Border added */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Feature Icons */
+.feature-card .icon img {
+  width: 60px;  /* Desktop size */
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+/* Signup Section */
+.signup-section {
+  text-align: center;
+  margin: 40px 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.signup-section input {
+  padding: 10px 15px;
+  width: 250px;
+  border-radius: 5px;
+  border: 2px solid #e0e0e0; /* Border added */
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.signup-section input:focus {
+  border-color: #ff3cac; /* Pink border on focus */
+}
+
+.signup-section button.signup-btn {
+  border: 2px solid #ff3cac; /* Optional matching border */
+}
+
+/* Footer */
+footer {
+  background-color: #87CEFA; /* Bright blue */
+  color: #ffffff;
+  padding: 40px 20px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.footer-info, .footer-links {
+  flex: 1 1 200px;
+}
+
+.footer-info h4, .footer-links h4 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+  transition: color 0.3s, padding-left 0.2s;
+}
+
+.footer-links a:hover {
+  color: #ff3cac; /* Pink hover */
+  padding-left: 5px;
+}
+
+footer p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 10px;
+  }
+
+  .feature-card {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .feature-card .icon img {
+    width: 50px;  /* Smaller icons on mobile */
+    height: 50px;
+  }
+
+  .signup-section input {
+    width: 80%;
+  }
+
+  .cta-btn {
+    margin-bottom: 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
 }
 
 
